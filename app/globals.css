@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #f6faff;
   --foreground: #171717;
 }
 
@@ -14,8 +14,27 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #f6faff;
+    --foreground: #171717;
+    --primary: #0076bbe6;
+  }
+}
+
+@layer base {
+  .nav-bar {
+    @apply flex items-center justify-between px-20 pt-5; 
+  }
+
+  .nav-links-container {
+    @apply flex items-center space-x-10;
+  }
+
+  .nav-link {
+    @apply hover:text-[#0076bbe6];
+  }
+
+  .join-button {
+    @apply px-4 py-2 rounded-md border-2 border-[#0076bbe6] hover:bg-[#0076bbe6] hover:text-white;
   }
 }
 

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Image from "next/image";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,6 +29,28 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <header>
+          <nav className="nav-bar">
+            <Image src="/IEEE_logo.png" alt="image" width={100} height={100} />
+            <div className="flex items-center justify-between gap-20">
+              <div className="nav-links-container">
+                <Link href="/" className="nav-link">
+                  Home
+                </Link>
+                <Link href="/about" className="nav-link">
+                  About
+                </Link>
+                <Link href="/projects" className="nav-link">
+                  Projects
+                </Link>
+                <Link href="/contact" className="nav-link">
+                  Contact
+                </Link>
+              </div>
+              <button className="join-button">Join the class!</button>
+            </div>
+          </nav>
+        </header>
         {children}
       </body>
     </html>
