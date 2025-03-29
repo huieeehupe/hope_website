@@ -45,6 +45,9 @@ const NavBar = () => {
           <Link href="#projects" className="nav-link">
             Projects
           </Link>
+          <Link href="#curriculum" className="nav-link">
+            Curriculum
+          </Link>
           <Link href="#calendar" className="nav-link">
             Calendar
           </Link>

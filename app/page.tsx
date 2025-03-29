@@ -3,6 +3,7 @@ import mentors from "@/constants/mentors";
 import ProjectCarousel from "@/components/ProjectCarousel";
 import projects from "@/constants/projects";
 import Link from "next/link";
+import curriculum from "@/constants/curriculum";
 
 export default function Home() {
   return (
@@ -55,6 +56,64 @@ export default function Home() {
       >
         <h1 className="text-[50px] font-bold">Past HOPE Student Projects</h1>
         <ProjectCarousel projects={projects} />
+      </section>
+
+      <section id="curriculum" className="flex flex-col gap-5 items-center p-5">
+        <h1 className="text-black text-[50px] font-bold">The Curriculum</h1>
+        <div className="overflow-x-auto w-4/5">
+          <table className="min-w-full bg-white border border-gray-300 shadow-lg rounded-lg">
+            <thead className="bg-[#0076bbe6] text-white">
+              <tr>
+                <th className="py-3 px-6 border-b">Week</th>
+                <th className="py-3 px-6 border-b">Content/Topics covered</th>
+                <th className="py-3 px-6 border-b">Labs</th>
+                <th className="py-3 px-6 border-b">Resources</th>
+                <th className="py-3 px-6 border-b">Deliverables/Homeworks</th>
+              </tr>
+            </thead>
+            <tbody className="text-gray-700">
+              {curriculum.map((week, index) => (
+                <tr
+                  key={index}
+                  className={`${
+                    index % 2 === 0 ? "bg-gray-100" : "bg-white"
+                  } hover:bg-gray-200`}
+                >
+                  <td className="py-3 px-6 border-b">{week.week}</td>
+                  <td className="py-3 px-6 border-b">
+                    {week.content.map((item, idx) => (
+                      <div key={idx}>- {item}</div>
+                    ))}
+                  </td>
+                  <td className="py-3 px-6 border-b">
+                    {week.labs.map((lab, idx) => (
+                      <div key={idx}>- {lab}</div>
+                    ))}
+                  </td>
+                  <td className="py-3 px-6 border-b">
+                    {week.resourses.map((resource, idx) => (
+                      <div key={idx}>
+                        <a
+                          href={resource.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-blue-500 underline decoration-dotted"
+                        >
+                          {resource.name}
+                        </a>
+                      </div>
+                    ))}
+                  </td>
+                  <td className="py-3 px-6 border-b">
+                    {week.deliverables.map((deliverable, idx) => (
+                      <div key={idx}>{deliverable}</div>
+                    ))}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </section>
 
       <section id="calendar" className="flex flex-col gap-5 items-center p-5">
