@@ -3,7 +3,6 @@ import { login } from "@/lib/actions/auth";
 import React from "react";
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import Form from "next/form";
 import { useRouter } from "next/navigation";
@@ -13,6 +12,12 @@ const Page = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  function handleSubmit() {
+    console.log("User email: ", email);
+    console.log("User password: ", password);
+
+  }
 
   return (
     <div className="center-section bg-[#27262b]">
@@ -42,7 +47,7 @@ const Page = () => {
 
         <div className="pt-8">
           <Form
-            action={() => router.push("/hope")}
+            action={handleSubmit}
             className="flex flex-col gap-5"
           >
             {/* TODO: Add auth function here*/}
