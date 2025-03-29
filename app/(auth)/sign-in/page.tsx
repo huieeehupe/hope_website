@@ -8,8 +8,6 @@ import Form from "next/form";
 import { useRouter } from "next/navigation";
 
 const Page = () => {
-  const router = useRouter();
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
