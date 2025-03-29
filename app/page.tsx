@@ -2,6 +2,7 @@ import UserCarousel from "@/components/UserCarousel";
 import mentors from "@/constants/mentors";
 import ProjectCarousel from "@/components/ProjectCarousel";
 import projects from "@/constants/projects";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -25,9 +26,11 @@ export default function Home() {
             experience with soldering, bringup, and testing.
           </p>
 
-          <button className="bg-[#0076bbe6] w-max px-5 py-3 rounded-md text-white mt-10">
-            Read more about HOPE
-          </button>
+          <Link href={"#about"}>
+            <button className="bg-[#0076bbe6] w-max px-5 py-3 rounded-md text-white mt-10">
+              Read more about HOPE
+            </button>
+          </Link>
         </div>
       </section>
 
@@ -47,7 +50,7 @@ export default function Home() {
       </section>
 
       <section
-        className="flex flex-col gap-5 items-center p-5 bg-black"
+        className="flex flex-col gap-5 items-center p-5 bg-black pb-20"
         id="projects"
       >
         <h1 className="text-[50px] font-bold">Past HOPE Student Projects</h1>
@@ -61,6 +64,62 @@ export default function Home() {
           className="border: 0 w-4/5 h-screen"
         ></iframe>
       </section>
+
+      <section
+        className="flex flex-col gap-5 items-center pt-10 pb-5 bg-black text-white"
+        id="contact"
+      >
+        <h1 className="text-[50px] font-bold">Get in Touch</h1>
+        <p className="text-center text-lg max-w-2xl">
+          Connect with us through our social platforms or join our GroupMe to
+          stay up to date with IEEE HOPE events!
+        </p>
+
+        <div className="flex gap-5">
+          <a
+            href="https://groupme.com/join_group/96131081/uo3DOddE"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className="bg-[#0076bbe6] px-6 py-3 rounded-md text-white text-lg hover:bg-[#005999]">
+              Join Our GroupMe
+            </button>
+          </a>
+        </div>
+
+        <div className="flex gap-10 text-xl pt-5">
+          <a
+            href="https://linktr.ee/ieee_hu?utm_source=linktree_admin_share&fbclid=PAY2xjawJU4RpleHRuA2FlbQIxMQABpuDBT3zgCJ9PjzsPtcOFnxu0ND03pk1GFiNNttDaSJYmNCv1hyjagfnAOg_aem_Li9IoM4bba6ul4MPMEjYIQ"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-[#0076bbe6]"
+          >
+            Linktree
+          </a>
+          <a
+            href="https://www.instagram.com/ieee_hu?igsh=MWFoMnBzazdrNWxhcg=="
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-[#0076bbe6]"
+          >
+            Instagram
+          </a>
+          <a
+            href="https://www.linkedin.com/company/howard-university-ieee-student-branch/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-[#0076bbe6]"
+          >
+            LinkedIn
+          </a>
+        </div>
+      </section>
+
+      <footer className="text-center text-white pb-5 bg-black">
+        <p>
+          &copy; {new Date().getFullYear()} HU IEEE HOPE. All rights reserved.
+        </p>
+      </footer>
     </>
   );
 }
