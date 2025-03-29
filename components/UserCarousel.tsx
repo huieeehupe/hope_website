@@ -70,8 +70,6 @@ const UserCarousel = ({
               alt={users[currentIndex].name}
               width={200}
               height={200}
-              layout="fixed"
-              objectFit="contain"
               className="rounded-lg mb-4"
             />
           </div>
