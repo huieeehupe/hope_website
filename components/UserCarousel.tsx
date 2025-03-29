@@ -28,7 +28,7 @@ const UserCarousel = ({
   };
 
   return (
-    <div className="flex flex-col items-center justify-center gap-5">
+    <div className="flex flex-col items-center justify-center gap-1">
       <div className="flex items-center justify-center gap-50 w-[100vw] h-max relative">
         {/* Carousel Images */}
         <div className="flex flex-row items-center justify-center gap-10 w-full">
@@ -39,7 +39,7 @@ const UserCarousel = ({
           >
             <div
               className={`${
-                currentIndex === 0 ? "opacity-50" : "opacity-80"
+                currentIndex === 0 ? "opacity-50" : "opacity-60"
               } transition-opacity duration-500`}
               style={{ transform: "scale(0.8)" }}
             >
@@ -83,7 +83,7 @@ const UserCarousel = ({
           >
             <div
               className={`${
-                currentIndex === users.length - 1 ? "opacity-50" : "opacity-80"
+                currentIndex === users.length - 1 ? "opacity-50" : "opacity-60"
               } transition-opacity duration-500`}
               style={{ transform: "scale(0.8)" }}
             >
@@ -109,7 +109,7 @@ const UserCarousel = ({
 
       {/* Carousel Indicators */}
       <div>
-        <div className="flex justify-center space-x-2 mt-4">
+        <div className="flex justify-center space-x-2 mt-3">
           {users.map((_, index) => (
             <span
               key={index}

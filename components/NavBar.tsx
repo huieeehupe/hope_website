@@ -42,10 +42,13 @@ const NavBar = () => {
           <Link href="#about" className="nav-link">
             About
           </Link>
-          <Link href="/projects" className="nav-link">
+          <Link href="#projects" className="nav-link">
             Projects
           </Link>
-          <Link href="/contact" className="nav-link">
+          <Link href="#calendar" className="nav-link">
+            Calendar
+          </Link>
+          <Link href="#contact" className="nav-link">
             Contact
           </Link>
         </div>
