@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect } from "react";
 
-const NavBar = ({ join }: { join: Boolean }) => {
+const NavBar = ({ join }: { join: boolean }) => {
   const [hasScrolled, setHasScrolled] = React.useState(false);
   useEffect(() => {
     const handleScroll = () => {
