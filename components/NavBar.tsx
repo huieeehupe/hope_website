@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect } from "react";
 
-const NavBar = () => {
+const NavBar = ({ join }: { join: Boolean }) => {
   const [hasScrolled, setHasScrolled] = React.useState(false);
   useEffect(() => {
     const handleScroll = () => {
@@ -22,7 +22,7 @@ const NavBar = () => {
     <nav
       className={`nav-bar z-2 ${
         hasScrolled
-          ? "bg-black/85 shadow-lg transition-all duration-500 ease-in-out "
+          ? `bg-black/85 shadow-lg transition-all duration-500 ease-in-out`
           : "bg-transparent"
       }`}
     >
@@ -39,25 +39,31 @@ const NavBar = () => {
           <Link href="/" className="nav-link">
             Home
           </Link>
-          <Link href="#about" className="nav-link">
+          <Link href="/hope/#about" className="nav-link">
             About
           </Link>
-          <Link href="#projects" className="nav-link">
+          <Link href="/hope/#projects" className="nav-link">
             Projects
           </Link>
-          <Link href="#curriculum" className="nav-link">
+          <Link href="/hope/#curriculum" className="nav-link">
             Curriculum
           </Link>
-          <Link href="#calendar" className="nav-link">
+          <Link href="/hope/#calendar" className="nav-link">
             Calendar
           </Link>
-          <Link href="#contact" className="nav-link">
+          <Link href="/hope/#contact" className="nav-link">
             Contact
           </Link>
         </div>
-        <a href="https://forms.office.com/r/Xz0BSJSwt8">
-          <button className={`join-button text-white`}>Join the class!</button>
-        </a>
+        {join ? (
+          <a href="/sign-in">
+            <button className={`join-button text-white`}>
+              Join the class!
+            </button>
+          </a>
+        ) : (
+          <p></p>
+        )}
       </div>
     </nav>
   );
