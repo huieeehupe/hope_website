@@ -1,6 +1,8 @@
 import React from "react";
 import { redirect } from "next/navigation";
 import { auth } from "@/auth";
+import updates from "@/constants/updates";
+import UpdatesCard from "@/components/updateCard";
 
 const DashboardPage = async () => {
   // Check if the user is authenticated
@@ -10,9 +12,15 @@ const DashboardPage = async () => {
     redirect("/sign-in");
   }
   return (
-    <div>
-      <h1>Dashboard</h1>
-      <p>Welcome to your dashboard {session.user.name}!</p>
+    <div className="flex flex-col items-center justify-center ">
+      <h1 className="text-[40px] pt-10">Class/Campus Updates</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-10 py-5">
+        {updates.map((update, index) => (
+          <div key={index}>
+            <UpdatesCard update={update} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
