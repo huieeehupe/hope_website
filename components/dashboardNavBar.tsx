@@ -21,9 +21,9 @@ const DashboardNavBar = () => {
 
   return (
     <nav
-      className={`nav-bar relative px-10 z-2 ${
+      className={`nav-bar relative px-10 z-2 shadow-md ${
         hasScrolled
-          ? `shadow-lg transition-all duration-500 ease-in-out`
+          ? `transition-all duration-500 ease-in-out`
           : "bg-transparent"
       }`}
     >
