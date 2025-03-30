@@ -1,3 +1,5 @@
+'use client';
+
 import {
   Card,
   CardContent,
@@ -6,6 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { useRouter } from "next/navigation";
 
 const CourseCard = ({
   course,
@@ -18,8 +21,9 @@ const CourseCard = ({
     semester: string;
   };
 }) => {
+    const router = useRouter();
   return (
-    <Card className="hover:shadow-2xl transition-shadow duration-300 cursor-pointer">
+    <Card className="hover:shadow-2xl transition-shadow duration-300 cursor-pointer" onClick={() => router.push("/courses/" + course.code)}>
       <CardHeader className="flex flex-col items-center">
         <CardTitle>
           <img
