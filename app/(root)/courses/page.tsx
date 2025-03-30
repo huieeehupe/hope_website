@@ -3,7 +3,7 @@ import { redirect } from "next/navigation";
 import { auth } from "@/auth";
 import SignOutButton from "@/components/signOutButton";
 
-const DashboardPage = async () => {
+const Page = async () => {
   // Check if the user is authenticated
   const session = await auth();
   if (!session?.user) {
@@ -12,10 +12,10 @@ const DashboardPage = async () => {
   }
   return (
     <div>
-      <h1>Dashboard</h1>
-      <p>Welcome to your dashboard {session.user.name}!</p>
+      <h1>Courses</h1>
+      <p>Welcome to your courses page {session.user.name}!</p>
     </div>
   );
 };
 
-export default DashboardPage;
+export default Page;

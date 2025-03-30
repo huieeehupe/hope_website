@@ -9,10 +9,10 @@ export default function Page() {
   return (
     <>
       <section
-        className="flex items-center justify-center align-center bg-[url('/IEEE_students.jpg')] bg-cover bg-center h-screen"
+        className="flex items-center justify-center align-center bg-[url('/static/images/hope_group.png')] bg-cover bg-center h-screen"
         id="home"
       >
-        <div className="absolute inset-0 bg-black/75"></div>
+        <div className="absolute inset-0 bg-black/65 "></div>
         <div className="relative flex flex-col gap-5 px-20 items-center justify-center w-4/5">
           <h1 className="text-[#0076bbe6] text-[40px]">Howard University</h1>
           <h1 className="text-[#0076bbe6] text-[40px]">
