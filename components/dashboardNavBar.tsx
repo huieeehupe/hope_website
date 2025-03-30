@@ -8,7 +8,7 @@ const DashboardNavBar = () => {
   const [hasScrolled, setHasScrolled] = React.useState(false);
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
+      if (window.scrollY > 1) {
         setHasScrolled(true);
       } else {
         setHasScrolled(false);
@@ -21,10 +21,10 @@ const DashboardNavBar = () => {
 
   return (
     <nav
-      className={`nav-bar relative px-10 z-2 shadow-md ${
+      className={`nav-bar px-10 z-2 shadow-md ${
         hasScrolled
-          ? `transition-all duration-500 ease-in-out`
-          : "bg-transparent"
+          ? `transition-all duration-500 ease-in-out bg-white/90`
+          : "relative"
       }`}
     >
       <div className="flex items-center justify-between gap-10">
