@@ -1,21 +1,17 @@
-'use client';
-import { login } from "@/lib/actions/auth";
 import React from "react";
+import SignInButton from "@/components/signInButton";
 
-import { useState } from "react";
 import Link from "next/link";
-import Form from "next/form";
+import SignInForm from "@/components/signInForm";
 
-const Page = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+import { auth } from "@/auth";
+import { redirect } from "next/navigation";
 
-  function handleSubmit() {
-    console.log("User email: ", email);
-    console.log("User password: ", password);
-
+const Page = async () => {
+  const session = await auth();
+  if (session?.user) {
+    redirect("/dashboard");
   }
-
   return (
     <div className="center-section bg-[#27262b]">
       <div className="auth-container">
@@ -43,31 +39,7 @@ const Page = () => {
         </div>
 
         <div className="pt-8">
-          <Form
-            action={handleSubmit}
-            className="flex flex-col gap-5"
-          >
-            {/* TODO: Add auth function here*/}
-            <input
-              type="text"
-              placeholder="Email Address / Phone number / ID"
-              required
-              onChange={(e) => setEmail(e.target.value)}
-              className="input-style"
-            />
-            <input
-              type="text"
-              placeholder="Password"
-              required
-              onChange={(e) => setPassword(e.target.value)}
-              className="input-style"
-            />
-            <div className="flex justify-center">
-              <button type="submit" className="bg-blue-500 text-white w-full py-2 rounded-md">
-                Log In
-              </button>
-            </div>
-          </Form>
+          <SignInForm />
         </div>
         <div className="flex items-center pt-10 w-full">
           <hr className="flex-grow border" />
@@ -76,23 +48,8 @@ const Page = () => {
         </div>
 
         <div className="flex justify-center pt-10 gap-10">
-          <button
-            onClick={() => login("google")}
-            className="bg-white text-black w-full py-2 rounded-md flex items-center justify-center gap-2"
-          >
-            {" "}
-            {/* TODO: Add auth function here*/}
-            Login with Google
-          </button>
-          <button
-            onClick={() => login("github")}
-            className="bg-white text-black w-full py-2 rounded-md flex items-center justify-center gap-2"
-          >
-            {" "}
-            {/* TODO: Add auth function here*/}
-            Login with Github
-          </button>
-
+          <SignInButton auth_provider="google" />
+          <SignInButton auth_provider="github" />
         </div>
       </div>
     </div>
