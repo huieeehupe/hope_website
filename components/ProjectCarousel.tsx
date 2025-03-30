@@ -18,6 +18,11 @@ export default function ProjectCarousel({
     about: string;
     image: string;
     url_to_docs: string;
+    team_members: {
+      name: string;
+      linkedIn: string;
+    }[];
+    semester: string;
   }[];
 }) {
   return (
@@ -44,7 +49,7 @@ export default function ProjectCarousel({
                   />
                   <div>
                     <h2 className="text-[40px] font-bold text-white ">
-                      {project.name}
+                      {project.name} [{project.semester}]
                     </h2>
                     <p className="text-gray-600 mt-2">{project.about}</p>
                     <a
@@ -55,6 +60,17 @@ export default function ProjectCarousel({
                     >
                       View Documentation
                     </a>
+
+                    <h3 className="text-lg font-semibold mt-4 text-white">
+                      Team Members:
+                    </h3>
+                    <ul className="list-disc list-inside">
+                      {project.team_members.map((member, idx) => (
+                        <li key={idx} className="text-gray-600 underline decoration-dotted">
+                          <a href={member.linkedIn}>{member.name}</a>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </CardContent>
               </Card>
