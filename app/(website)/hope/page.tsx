@@ -1,11 +1,11 @@
 import UserCarousel from "@/components/UserCarousel";
 import mentors from "@/constants/mentors";
-import CarouselProj from "@/components/ProjectCarousel";
+import ProjectCarousel from "@/components/ProjectCarousel";
 import projects from "@/constants/projects";
 import Link from "next/link";
 import curriculum from "@/constants/curriculum";
 
-export default function Page () {
+export default function Page() {
   return (
     <>
       <section
@@ -55,7 +55,7 @@ export default function Page () {
         id="projects"
       >
         <h1 className="text-[50px] font-bold">Past HOPE Student Projects</h1>
-        <CarouselProj projects={projects} />
+        <ProjectCarousel projects={projects} />
       </section>
 
       <section id="curriculum" className="flex flex-col gap-5 items-center p-5">
@@ -133,7 +133,6 @@ export default function Page () {
           Connect with us through our social platforms or join our GroupMe to
           stay up to date with IEEE HOPE events!
         </p>
-
         <div className="flex gap-5">
           <a
             href="https://groupme.com/join_group/96131081/uo3DOddE"
@@ -147,6 +146,14 @@ export default function Page () {
         </div>
 
         <div className="flex gap-10 text-xl pt-5">
+          <p className="text-center text-lg max-w-2xl">
+            <a
+              href="mailto:hu.ieee.hope@gmail.com"
+              className="hover:text-[#0076bbe6]"
+            >
+              Email
+            </a>
+          </p>
           <a
             href="https://linktr.ee/ieee_hu?utm_source=linktree_admin_share&fbclid=PAY2xjawJU4RpleHRuA2FlbQIxMQABpuDBT3zgCJ9PjzsPtcOFnxu0ND03pk1GFiNNttDaSJYmNCv1hyjagfnAOg_aem_Li9IoM4bba6ul4MPMEjYIQ"
             target="_blank"

@@ -30,7 +30,7 @@ const mentors = [
     {
         name: "Dimitri Cromarty",
         image: "/static/images/dimitri.png",
-        major: "Computer Engineering",
+        major: "Electrical Engineering",
         about: "",
         title: "Mentor",
     },
