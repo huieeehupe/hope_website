@@ -39,19 +39,19 @@ const NavBar = ({ join }: { join: boolean }) => {
           <Link href="/" className="nav-link">
             Home
           </Link>
-          <Link href="/hope/#about" className="nav-link">
+          <Link href="#about" className="nav-link">
             About
           </Link>
-          <Link href="/hope/#projects" className="nav-link">
+          <Link href="#projects" className="nav-link">
             Projects
           </Link>
-          <Link href="/hope/#curriculum" className="nav-link">
+          <Link href="#curriculum" className="nav-link">
             Curriculum
           </Link>
-          <Link href="/hope/#calendar" className="nav-link">
+          <Link href="#calendar" className="nav-link">
             Calendar
           </Link>
-          <Link href="/hope/#contact" className="nav-link">
+          <Link href="#contact" className="nav-link">
             Contact
           </Link>
         </div>

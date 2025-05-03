@@ -1,4 +1,13 @@
-const curriculum = [
+export const hope_curriculum : {
+  week: string;
+  content: string[];
+  labs: string[];
+  resourses: {
+      name: string;
+      url: string;
+  }[];
+  deliverables: string[];
+}[] = [
   {
     week: "Week 1: Introduction to PCB Design",
     content: ["How to solder", "What is HOPE?", "HOPE curriculum overview"],
@@ -139,4 +148,113 @@ const curriculum = [
   },
 ];
 
-export default curriculum;
+
+
+
+export const vlsi_curriculum : {
+  week: string;
+  content: string[];
+  labs: string[];
+  resourses: {
+      name: string;
+      url: string;
+  }[];
+  deliverables: string[];
+}[] = [
+  {
+    week: "Week 1: Intro",
+    content: [
+      "Class curriculum discussion/expectations",
+      "Introduction to VLSI",
+      "VLSI design flow"
+    ],
+    labs: [],
+    resourses: [],
+    deliverables: []
+  },
+  {
+    week: "Week 2: RISC V assembly",
+    content: [
+      "RV64I assembly (add, sub, ld, sd, beq)",
+      "Converting assembly to binary/hex"
+    ],
+    labs: [],
+    resourses: [],
+    deliverables: [
+      "Homework1 (Assembly programming)"
+    ]
+  },
+  {
+    week: "Week 3: The RV64I processor I",
+    content: [
+      "A glimpse at the RV64I processor",
+      "The RV64I datapath (Theory)"
+    ],
+    labs: [],
+    resourses: [],
+    deliverables: [
+      "Homework 2 (Implement the RV32I ALU stage on an FPGA)"
+    ]
+  },
+  {
+    week: "Week 4: The RV64I processor II",
+    content: [
+      "Implementing the RV64I datapath in Verilog",
+      "The RV64I control module"
+    ],
+    labs: [],
+    resourses: [],
+    deliverables: [
+      "Homework 3 (Finish the RV64I)"
+    ]
+  },
+  {
+    week: "Week 5: Design Verification",
+    content: [
+      "Types of design verification",
+      "Directed testing",
+      "Constraint random verfication",
+      "A little about SystemVerilog",
+      "Simulation tools"
+    ],
+    labs: [],
+    resourses: [],
+    deliverables: [
+      "Homework 4 (A small direct test for the RV64I processor)"
+    ]
+  },
+  {
+    week: "Week 6: SystemVerilog",
+    content: [
+      "Why SystemVerilog",
+      "All about SystemVerilog contructs",
+      "A little about UVM"
+    ],
+    labs: [],
+    resourses: [],
+    deliverables: [
+      "No homework (Practice SystemVerilog)"
+    ]
+  },
+  {
+    week: "Week 7: UVM",
+    content: [
+      "All about UVM",
+      "EDAplayground"
+    ],
+    labs: [],
+    resourses: [],
+    deliverables: [
+      "Homework 5 (Develop a UVM test for the RV64I processor)"
+    ]
+  },
+  {
+    week: "Week 8: Showcase",
+    content: [
+      "Showcase outcome"
+    ],
+    labs: [],
+    resourses: [],
+    deliverables: []
+  }
+];

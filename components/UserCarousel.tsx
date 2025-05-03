@@ -46,7 +46,7 @@ const UserCarousel = ({
               />
               <p className="text-black text-3xl">{user.name}</p>
               <p className="text-black">{user.major} Major</p>
-              <p className="text-black">HOPE {user.title}</p>
+              <p className="text-black">{user.title}</p>
               <p className="text-black">{user.about}</p>
             </CarouselItem>
           ))}
