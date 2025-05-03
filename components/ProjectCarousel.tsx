@@ -39,7 +39,7 @@ export default function ProjectCarousel({
           <CarouselItem key={index}>
             <div className="p-1 bg-transparent w-full">
               <Card className="bg-transparent">
-                <CardContent className="flex flex-row justify-around py-6 w-max gap-10 align-middle">
+                <CardContent className="flex flex-row justify-around py-6 w-full gap-10 items-center">
                   <img
                     src={project.image}
                     alt={project.name}
@@ -47,11 +47,11 @@ export default function ProjectCarousel({
                     height={250}
                     className="object-cover rounded-lg"
                   />
-                  <div>
-                    <h2 className="text-[40px] font-bold text-white ">
+                  <div className="flex-1 min-w-0">
+                    <h2 className="text-[32px] font-bold text-white w-full break-words">
                       {project.name} [{project.semester}]
                     </h2>
-                    <p className="text-gray-600 mt-2">{project.about}</p>
+                    <p className="text-gray-600 mt-2 break-words">{project.about}</p>
                     <a
                       href={project.url_to_docs}
                       target="_blank"

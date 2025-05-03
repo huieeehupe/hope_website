@@ -1,4 +1,4 @@
-const mentors = [
+export const hope_mentors = [
     {
         name: "Jeff Mofor Allo",
         image: "/static/images/jeffa.png",
@@ -43,4 +43,21 @@ const mentors = [
     },
 ];
 
-export default mentors;
+export const vlsi_mentors = [
+    {
+        name: "Dimitri Cromarty",
+        image: "/static/images/dimitri.png",
+        major: "Electrical Engineering",
+        about: "",
+        title: "Chair",
+    },
+    {
+        name: "Jeff Mofor Allo",
+        image: "/static/images/jeffa.png",
+        major: "Electrical Engineering",
+        about: "",
+        title: "Mentor",
+    }
+];
+
+

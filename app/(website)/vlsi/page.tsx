@@ -1,8 +1,8 @@
 import UserCarousel from "@/components/UserCarousel";
-import {hope_mentors} from "@/constants/mentors";
+import {vlsi_mentors} from "@/constants/mentors";
 import ProjectCarousel from "@/components/ProjectCarousel";
-import {hope_projects} from "@/constants/projects";
-import {hope_curriculum} from "@/constants/curriculum";
+import {vlsi_projects} from "@/constants/projects";
+import {vlsi_curriculum} from "@/constants/curriculum";
 
 export default function Page() {
   return (
@@ -15,31 +15,26 @@ export default function Page() {
         <div className="relative flex flex-col gap-5 px-20 items-center justify-center w-4/5">
           <h1 className="text-[#0076bbe6] text-[40px]">Howard University</h1>
           <h1 className="text-[#0076bbe6] text-[40px]">
-            Hands-On Printed Circuit Board Engineering [HOPE]
+            IEEE Advanced FPGA/ASIC Design and Verification
           </h1>
           <h2 className="text-[50px] text-white text-center pt-5">
-            Bridging Theory and Practice
+            Mastering the VLSI Design and Verification Flow
           </h2>
           <p className="text-white text-center">
-            IEEE HOPE is an engineering design class for PCB-related design
-            problems requiring PCB-related design solutions. Gaining practical
-            experience with soldering, bringup, and testing.
+            IEEE VLSI 101 is an 8-week intensive course guiding students through the end-to-end VLSI design flow, covering RISC-V architecture, Verilog-based processor implementation, and modern verification methodologies using SystemVerilog and UVM.
           </p>
         </div>
       </section>
 
       <section className="flex flex-col gap-5 items-center p-5" id="about">
-        <h1 className="text-black text-[50px] font-bold">About HOPE</h1>
+        <h1 className="text-black text-[50px] font-bold">About VLSI 101</h1>
         <div className="text-black flex-grow w-2/3 text-center">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime nisi
-          ullam necessitatibus illo accusantium maiores, corrupti molestiae
-          laboriosam ab facere a dolore et, odio impedit minima! Veniam pariatur
-          corporis ullam?
+          IEEE VLSI 101 offers a structured eight-week journey through VLSI fundamentals, digital design, and verification techniques. Students will engage with processor datapath design, control logic implementation, and learn to verify hardware using industry-standard tools.
         </div>
 
         <h1 className="text-black text-[30px] pt-5">Meet Your Mentors</h1>
         <div className="flex-grow">
-          <UserCarousel users={hope_mentors} />
+          <UserCarousel users={vlsi_mentors} />
         </div>
       </section>
 
@@ -47,8 +42,8 @@ export default function Page() {
         className="flex flex-col gap-5 items-center p-5 bg-black pb-20"
         id="projects"
       >
-        <h1 className="text-[50px] font-bold">Past HOPE Student Projects</h1>
-        <ProjectCarousel projects={hope_projects} />
+        <h1 className="text-[50px] font-bold">VLSI 101 Course Projects</h1>
+        <ProjectCarousel projects={vlsi_projects} />
       </section>
 
       <section id="curriculum" className="flex flex-col gap-5 items-center p-5">
@@ -65,7 +60,7 @@ export default function Page() {
               </tr>
             </thead>
             <tbody className="text-gray-700">
-              {hope_curriculum.map((week, index) => (
+              {vlsi_curriculum.map((week, index) => (
                 <tr
                   key={index}
                   className={`${
@@ -123,8 +118,7 @@ export default function Page() {
       >
         <h1 className="text-[50px] font-bold">Get in Touch</h1>
         <p className="text-center text-lg max-w-2xl">
-          Connect with us through our social platforms or join our GroupMe to
-          stay up to date with IEEE HOPE events!
+          Connect with us through our communication channels and join our VLSI 101 GroupMe to stay up to date with course announcements!
         </p>
         <div className="flex gap-5">
           <a
@@ -133,7 +127,7 @@ export default function Page() {
             rel="noopener noreferrer"
           >
             <button className="bg-[#0076bbe6] px-6 py-3 rounded-md text-white text-lg hover:bg-[#005999]">
-              Join Our GroupMe
+              Join VLSI 101 GroupMe
             </button>
           </a>
         </div>
@@ -176,7 +170,7 @@ export default function Page() {
 
       <footer className="text-center text-white pb-5 bg-black">
         <p>
-          &copy; {new Date().getFullYear()} HU IEEE HOPE. All rights reserved.
+          &copy; {new Date().getFullYear()} HU IEEE VLSI 101. All rights reserved.
         </p>
       </footer>
     </>
