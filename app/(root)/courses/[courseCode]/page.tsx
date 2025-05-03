@@ -16,6 +16,7 @@ const Page = ({ params }: { params: Promise<{ courseCode: string }> }) => {
       <h1 className="text-[40px] pt-10">{courseCode}</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-10 py-5">
         {/* Course cards will be rendered here */}
+        <p>This page is under development...</p>
       </div>
     </div>
   );

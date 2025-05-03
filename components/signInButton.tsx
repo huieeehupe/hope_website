@@ -8,7 +8,7 @@ const SignInButton = ({ auth_provider }: { auth_provider: string }) => {
     <Button size={"lg"} variant="outline" className="text-black" onClick={() => login(auth_provider)}>
       {"   "}
       <span>
-        <Image src="/IEEE_logo.png" alt="Google logo" width={25} height={25} />
+        <Image src={`/static/images/${auth_provider}.png`} alt={`${auth_provider} logo`} width={25} height={25} />
       </span>
       Login with {auth_provider}
     </Button>

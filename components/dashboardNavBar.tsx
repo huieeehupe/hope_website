@@ -8,7 +8,7 @@ const DashboardNavBar = () => {
   const [hasScrolled, setHasScrolled] = React.useState(false);
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 1) {
+      if (window.scrollY > 10) {
         setHasScrolled(true);
       } else {
         setHasScrolled(false);
