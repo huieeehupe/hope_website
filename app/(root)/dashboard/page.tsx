@@ -1,4 +1,5 @@
 import React from "react";
+import { prisma } from "@/lib/prisma";
 import { redirect } from "next/navigation";
 import { auth } from "@/auth";
 import updates from "@/constants/updates";
@@ -10,6 +11,18 @@ const DashboardPage = async () => {
   if (!session?.user) {
     // If not authenticated, redirect to the sign-in page
     redirect("/sign-in");
+  }
+  const user = await prisma.user.findUnique({
+      where: { email: session.user.email || "" },
+    });
+    if (!user) {
+      redirect("/sign-up");
+    }
+  const userProfile = await prisma.userProfile.findUnique({
+    where: { userId: user.id },
+  });
+  if (!userProfile) {
+    redirect("/create-profile");
   }
   return (
     <div className="flex flex-col items-center justify-center ">
