@@ -1,16 +1,25 @@
 import React from "react";
+import {prisma} from "@/lib/prisma";
 import { redirect } from "next/navigation";
 import { auth } from "@/auth";
 import CourseCard from "@/components/courseCard";
 import courses from "@/constants/courses";
 
 const Page = async () => {
-  // Check if the user is authenticated
   const session = await auth();
   if (!session?.user) {
-    // If not authenticated, redirect to the sign-in page
     redirect("/sign-in");
   }
+  const user = await prisma.user.findUnique({
+    where: { email: session.user.email || "" },
+  });
+  if (!user) {
+    redirect("/sign-up");
+  }
+
+  const my_courses = await prisma.course.findMany();
+  console.log(my_courses);
+  
   return (
     <div className="flex flex-col items-center justify-center">
       <h1 className="text-[40px] pt-10">Your Courses</h1>

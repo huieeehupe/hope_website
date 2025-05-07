@@ -15,7 +15,7 @@ const Page = async () => {
   return (
     <div className="center-section bg-[#27262b]">
       <div className="auth-container">
-        <div className="flex flex-col pt-10 gap-2">
+        {/* <div className="flex flex-col pt-10 gap-2">
           <h1 className="text-4xl font-semibold">Log In,</h1>
           <div className="flex gap-2 justify-between">
             <p>
@@ -45,7 +45,7 @@ const Page = async () => {
           <hr className="flex-grow border" />
           <p className="px-2">OR</p>
           <hr className="flex-grow border" />
-        </div>
+        </div> */}
 
         <div className="flex justify-center pt-10 gap-10">
           <SignInButton auth_provider="google" />

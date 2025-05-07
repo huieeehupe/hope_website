@@ -1,4 +1,4 @@
-'use server';
+"use server";
 import { signIn, signOut } from "@/auth";
 
 export const login = async (auth_provider: string) => {
@@ -8,7 +8,8 @@ export const login = async (auth_provider: string) => {
 };
 
 export const logout = async () => {
-    await signOut({
-        redirectTo: "/",
-    });
+  await signOut({
+    redirectTo: "/sign-in",
+    redirect: true,
+  });
 };
