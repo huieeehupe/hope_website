@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { redirect } from "next/navigation";
 
-export default function CreateProfileForm() {
+export default function CreateProfileForm( {userId, email}: {userId: string, email: string}) {
   const [name, setName] = useState("");
   const [major, setMajor] = useState("");
   const [loading, setLoading] = useState(false);
@@ -15,7 +15,7 @@ export default function CreateProfileForm() {
       const res = await fetch("/api/create-profile", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, major }),
+        body: JSON.stringify({ userId, email, name, major }),
       });
       if (res.ok) {
         redirect("/dashboard");
