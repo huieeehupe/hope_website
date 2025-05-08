@@ -1,5 +1,5 @@
 import React from "react";
-import { prisma } from "@/lib/prisma";
+import prisma from "@/lib/prisma";
 import { redirect } from "next/navigation";
 import { auth } from "@/auth";
 import updates from "@/constants/updates";
