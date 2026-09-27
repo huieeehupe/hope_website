@@ -1,23 +1,38 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-blue-50 to-white">
-      <h1 className="text-4xl md:text-5xl font-bold text-[#0076bbe6] mb-8">
-        IEEE Student Hub
-      </h1>
-      <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6">
-        <Link href="/hope">
-          <button className="px-6 py-3 bg-red-600 text-white rounded-lg shadow-md hover:bg-red-700 transform hover:-translate-y-1 transition">
-            HOPE Course
-          </button>
+    <div className="chapter-home">
+      <a className="chapter-skip-link" href="#main-content">Skip to content</a>
+      <header className="chapter-header">
+        <Link href="/" className="chapter-logo" aria-label="IEEE chapter home">
+          <Image src="/IEEE_logo.png" alt="IEEE chapter logo" width={110} height={62} priority />
         </Link>
-        <Link href="/vlsi">
-          <button className="px-6 py-3 bg-green-600 text-white rounded-lg shadow-md hover:bg-green-700 transform hover:-translate-y-1 transition">
-            VLSI Course
-          </button>
-        </Link>
-      </div>
+        <nav aria-label="Main navigation">
+          <ul className="chapter-nav">
+            <li><Link href="/" aria-current="page">Home</Link></li>
+            <li><Link href="/hope">HOPE Course</Link></li>
+            <li><Link href="/vlsi">VLSI Course</Link></li>
+          </ul>
+        </nav>
+      </header>
+      <main id="main-content" className="chapter-main" tabIndex={-1}>
+        <div className="chapter-photo-glass">
+          <figure className="chapter-photo">
+            <Image
+              src="/eboard-2025-2026.jpeg"
+              alt="IEEE chapter executive board for 2025–2026 posing together on a staircase"
+              width={1202}
+              height={1503}
+              sizes="(max-width: 634px) calc(100vw - 74px), 560px"
+              priority
+            />
+            <figcaption>IEEE Board 2025-2026</figcaption>
+          </figure>
+        </div>
+        <h1 className="chapter-motto">&ldquo;Advancing Technology for Humanity&rdquo; — IEEE</h1>
+      </main>
     </div>
   );
 }

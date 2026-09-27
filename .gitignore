@@ -15,12 +15,15 @@
 
 # next.js
 /.next/
+/.next-dev/
 /out/
 
 # production
 /build
 
 # misc
+# Local duplicate checkout; not part of the deployed application.
+/Untitled/
 .DS_Store
 *.pem
 

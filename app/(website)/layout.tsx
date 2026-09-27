@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "IEEE Hands-On Printed Circuit Board Engineering [HOPE]",
+  title: "IEEE Howard",
   description:
     "HOPE is an engineering design class for PCB-related design problems requiring PCB-related design solutions. Gaining practical experience with soldering, bringup, and testing.",
 };
